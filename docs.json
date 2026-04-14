@@ -47,6 +47,21 @@
           "anchor": "Blog",
           "href": "https://politedb.pages.dev/blog",
           "icon": "newspaper"
+        },
+        {
+          "anchor": "Discord",
+          "href": "https://discord.gg/politedb",
+          "icon": "discord"
+        },
+        {
+          "anchor": "Twitter",
+          "href": "https://x.com/PoliteDB_co",
+          "icon": "twitter"
+        },
+        {
+          "anchor": "LinkedIn",
+          "href": "https://linkedin.com/company/politedb",
+          "icon": "linkedin"
         }
       ]
     }
