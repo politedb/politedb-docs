@@ -3,37 +3,51 @@ title: "Keyboard Shortcuts"
 description: "Work quickly in PoliteDB without leaving the keyboard"
 ---
 
-PoliteDB is designed to be comfortable for keyboard‑driven users.
+PoliteDB includes a core set of keyboard shortcuts so you can navigate, run actions, and manage tabs quickly.
 
-Keyboard shortcuts help you move around the app, run queries, and manage windows without relying on the mouse.
+Shortcuts are configurable, so you can keep the defaults or adapt them to your workflow.
 
-## Working in the SQL editor
+## Default shortcuts
 
-In the SQL editor you can typically:
+By default, PoliteDB uses these bindings (`Mod` = `Cmd` on macOS, `Ctrl` on Windows/Linux):
 
-- Run the current query or selection with a single shortcut.
-- Open a new SQL window tied to the current connection.
-- Switch focus between the editor and results using the keyboard.
+- **Open search**: `Mod+K` (and `Mod+P` is also supported in connection workspace).
+- **New SQL editor**: `Mod+T`.
+- **Save changes**: `Mod+S`.
+- **Refresh**: `Mod+R`.
+- **Close current tab/window**: `Mod+W`.
 
-These shortcuts let you iterate on queries rapidly while keeping your hands on the keyboard.
+These actions are context-aware:
 
-## Navigating the workspace
+- **Close current** closes the active SQL/table window first. If no window is active, it closes the current connection tab.
+- **Save changes** triggers the current save flow (for example, pending table edits or current SQL draft workflow).
+- **Open search** opens the database object search dialog in the active connection context.
 
-Across a connection workspace you can use shortcuts to:
+## Editing and input behavior
 
-- Jump between open windows (for example, different SQL editors and table views).
-- Toggle side and bottom panels, such as the schema navigator or query history.
-- Move between connection tabs at the top of the app.
+When your cursor is inside an editable control (`input`, `textarea`, or content-editable area), PoliteDB intentionally limits shortcut handling to avoid interrupting text entry.
 
-This makes it easy to manage complex sessions with multiple connections and windows.
+In editable contexts:
 
-## General guidance
+- `Save changes` and `Close current` still work.
+- Other global shortcuts are ignored until focus leaves the input area.
 
-To get the most from keyboard shortcuts:
+This prevents common conflicts while you type names, SQL, tags, or other form content.
 
-- Learn the core actions you use every day, such as run query, open new window, and switch window.
-- Use shortcuts for navigation and layout changes, relying on the mouse mainly for precise datagrid work.
-- Keep an eye on tooltips and menus, which often display the associated shortcut for a given action.
+## Customizing shortcuts
 
-Over time, this can make PoliteDB feel more like a text editor or IDE than a traditional point‑and‑click database client.
+You can customize shortcuts from the **Keyboard shortcuts** dialog in the app.
 
+- Changes are saved locally on your device.
+- PoliteDB prevents duplicate bindings (one shortcut cannot be assigned to multiple actions).
+- Use at least one modifier key (`Cmd/Ctrl`, `Alt`, or `Shift`).
+- Press `Esc` to stop recording a new shortcut.
+- You can reset one shortcut or reset all shortcuts to defaults.
+
+## Practical tips
+
+- Start by memorizing `Mod+K`, `Mod+T`, `Mod+S`, and `Mod+W`.
+- Keep save and close shortcuts easy to reach, since they are used across many workflows.
+- If you already use IDE-like bindings, remap PoliteDB to match muscle memory.
+
+Consistent shortcut usage makes PoliteDB feel faster, especially when working across multiple connections and windows.
