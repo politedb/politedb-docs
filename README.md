@@ -1,55 +1,113 @@
-# Mintlify Starter Kit
+# PoliteDB docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+This repository contains the product documentation for PoliteDB.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+This README focuses on **docs content**: what to write, where to write it, and how to keep it consistent.
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## Content map
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+Use this structure when deciding where new content should live:
+
+- `index.mdx`: product overview and entry point
+- `quickstart.mdx`: first-run path for new users
+- `essentials/`: foundational concepts (connections, keychain, workspace, architecture)
+- `features/`: focused guides for individual capabilities (SQL editor, safe mode, AI assistant, etc.)
+- `docs.json`: information architecture and sidebar order
+
+Rule of thumb:
+
+- If users must understand a concept before using features, write it in `essentials/`.
+- If users want task-oriented guidance for one capability, write it in `features/`.
+
+## Writing principles
+
+- Write for operators who need clear, actionable guidance.
+- Use active voice and second person ("you").
+- Keep one idea per sentence.
+- Prefer concrete behavior over vague claims.
+- Explain constraints and safety implications clearly.
+
+## Page template
+
+For most pages, keep this flow:
+
+1. **What it is**: short definition and when to use it.
+2. **How it works**: behavior users can expect in app.
+3. **Key workflows**: practical, common tasks.
+4. **Safety/limits**: what it does not do, and where to be careful.
+5. **Recommended usage**: when to choose this feature or mode.
+
+## Style conventions
+
+- Use sentence case for headings.
+- Bold UI elements: Click **Settings**.
+- Use code formatting for commands, paths, and identifiers: `mint dev`, `docs.json`, `safe mode`.
+- Keep lists short and scannable.
+- Avoid marketing language and repeated claims.
+
+## Accuracy requirements
+
+Before publishing changes:
+
+- Verify behavior against implementation in `politedb-app` for feature docs.
+- Keep terminology consistent across pages.
+- If behavior is conditional (for example by mode), document each mode explicitly.
+- Prefer precise wording like "requires Touch ID before sending queries" over generic text like "adds safety."
+
+## Adding a new docs page
+
+1. Create a new `.mdx` file in `essentials/` or `features/`.
+2. Add frontmatter:
+   - `title`
+   - `description`
+3. Write content using the page template above.
+4. Add the page to `docs.json` navigation.
+5. Add images to `images/` and reference with absolute path, for example `/images/main-screen.png`.
+6. Validate links and preview formatting before merging.
+
+## Run docs locally
+
+Use this flow to preview docs changes on your machine:
+
+1. Install Mintlify CLI (one-time):
+
+```bash
+npm i -g mint
+```
+
+2. Start local docs preview from repository root:
+
+```bash
+mint dev
+```
+
+3. Open local site at `http://localhost:3000`.
+
+4. Check links before merge:
+
+```bash
+mint broken-links
+```
+
+## Images and examples
+
+- Use product screenshots to clarify UI-heavy flows.
+- Place the first image near the intro when it helps orient the reader.
+- Keep captions concise and factual.
+- Use realistic SQL examples that match documented workflows.
 
 ## AI-assisted writing
 
-Set up your AI coding tool to work with Mintlify:
+If you use AI to draft docs, install Mintlify documentation skill:
 
 ```bash
 npx skills add https://mintlify.com/docs
 ```
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
+Then review generated content for:
 
-See the [AI tools guides](/ai-tools) for tool-specific setup.
+- Product accuracy
+- Terminology consistency
+- Clarity and brevity
 
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
 - [Mintlify documentation](https://mintlify.com/docs)
