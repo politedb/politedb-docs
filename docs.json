@@ -55,7 +55,7 @@
         },
         {
           "anchor": "Twitter",
-          "href": "https://x.com/PoliteDB_co",
+          "href": "https://x.com/politedb_app",
           "icon": "twitter"
         },
         {
@@ -97,8 +97,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/politedb",
-      "github": "https://github.com/politedb",
+      "x": "https://x.com/politedb_app",
+      "discord": "https://discord.com/invite/xRfVFzKmUu",
       "linkedin": "https://linkedin.com/company/politedb"
     }
   }
